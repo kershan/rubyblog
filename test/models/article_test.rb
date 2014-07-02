@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class ArticleTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  =begin
+	test "validates" do
+    assert_equal
+  	end
+  =end
 end
