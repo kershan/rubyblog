@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get 'welcome/index'
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -11,7 +10,11 @@ Rails.application.routes.draw do
     resources :articles do
       resources :comments
     end
-    root 'articles#index'
+    # devise_for :users
+
+    devise_scope :user do
+      root to: "devise/sessions#new"
+    end
   end
 
   # Example of regular route:
