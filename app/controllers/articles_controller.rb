@@ -45,6 +45,7 @@ class ArticlesController < ApplicationController
 
 	def index
 		@articles = Article.all
+		@total = @articles.count
 	end
 
 	private
