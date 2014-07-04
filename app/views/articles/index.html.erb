@@ -1,6 +1,13 @@
-<h1>Listing Articles</h1>
+<h1>My Blog</h1>
 
 <%= link_to 'New Article', new_article_path %><br>
+<% if user_signed_in? %>
+	Welcome, <%= current_user.name %>
+	<%= link_to 'Sign Out', destroy_user_session_path %><br>
+<% else %>
+	<%= link_to 'Sign In', new_user_session_path %><br>
+	<%= link_to 'Sign Up', new_user_registration_path %><br>
+<% end %>
 <h4>Total Number of Articles: <%= @total %></h4>
 <table>
 	<tr>
