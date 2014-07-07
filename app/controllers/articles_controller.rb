@@ -1,5 +1,8 @@
-class ArticlesController < ApplicationController
-	def new
+	class ArticlesController < ApplicationController
+
+	before_filter :authenticate_user!, only: [ :new, :create, :edit, :update, :destroy ]
+
+	def new	
 		@article = Article.new
 	end
 

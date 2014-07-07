@@ -1,5 +1,7 @@
 <h1>New Article</h1>
 
+<% before_action :authenticate_user! %>
+
 <%= render 'form' %>
 
 <%= link_to 'Back', articles_path %>
